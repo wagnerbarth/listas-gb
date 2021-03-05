@@ -7,7 +7,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListasPage implements OnInit {
 
-  constructor() { }
+  // atributos / propriedades da classe
+  // property binding (propriedade vinculada)
+  lista: any;
+
+
+  constructor() {
+    // montar o array json lista
+    this.lista = [
+      {
+        "name": "Pokémon Yellow",
+        "icon": "bicycle-outline"
+      },
+      {
+        "name": "Mega Man X",
+        "icon": "bug-outline"
+      },
+      {
+        "name": "Donkey Kong",
+        "icon": "cloud-upload-outline"
+      },
+      {
+        "name": "The Legend of Zelda",
+        "icon": "bus-outline"
+      },
+      {
+        "name": "Super Mario World",
+        "icon": "cut"
+      }
+    ];
+  }
 
   ngOnInit() {
   }
@@ -20,7 +49,7 @@ export class ListasPage implements OnInit {
 
   // metodo escreverById (DOM)
   escreverById(id: any) {
-    const label = document.getElementById(id).textContent;
+    const label = document.getElementById(id).innerHTML;
     console.log(label);
   }
 

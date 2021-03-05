@@ -6,6 +6,7 @@
 
 <ion-content>
 
+  <h2> Lista Fixa </h2>
   <!--Listas fixas-->
   <ion-list>
 
@@ -27,6 +28,17 @@
 
     <ion-item (click)="escreverById('label5')">
       <ion-label id="label5">Super Mario World</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <h2> Lista Dinâmica </h2>
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of lista">
+      <ion-icon name="{{ item.icon }}"></ion-icon>
+      <ion-label (click)="escrever(item.name)"> {{ item.name }} </ion-label>
     </ion-item>
 
   </ion-list>
